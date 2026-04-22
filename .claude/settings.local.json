@@ -3,6 +3,9 @@
     "allow": [
       "Bash(pip install *)",
       "Bash(python -c ' *)"
+    ],
+    "additionalDirectories": [
+      "d:\\downloads\\OneDrive\\Pictures\\python projects\\gym"
     ]
   }
 }

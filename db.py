@@ -12,6 +12,34 @@ def get_conn():
     return conn
 
 
+def _migrate(conn):
+    for stmt in [
+        "ALTER TABLE workout_logs ADD COLUMN set_num INTEGER",
+        "ALTER TABLE workout_logs ADD COLUMN rpe     INTEGER",
+    ]:
+        try:
+            conn.execute(stmt)
+        except Exception:
+            pass
+
+    conn.executescript("""
+        CREATE TABLE IF NOT EXISTS templates (
+            id         INTEGER PRIMARY KEY AUTOINCREMENT,
+            name       TEXT    NOT NULL UNIQUE,
+            created_at TEXT    DEFAULT (date('now'))
+        );
+        CREATE TABLE IF NOT EXISTS template_exercises (
+            id          INTEGER PRIMARY KEY AUTOINCREMENT,
+            template_id INTEGER NOT NULL REFERENCES templates(id) ON DELETE CASCADE,
+            activity_id INTEGER NOT NULL REFERENCES activities(id),
+            sort_order  INTEGER NOT NULL DEFAULT 0,
+            target_sets INTEGER,
+            target_reps INTEGER,
+            target_kg   REAL
+        );
+    """)
+
+
 def init_db():
     with get_conn() as conn:
         conn.executescript("""
@@ -65,3 +93,4 @@ def init_db():
                 notes      TEXT
             );
         """)
+        _migrate(conn)

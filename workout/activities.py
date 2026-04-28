@@ -3,18 +3,18 @@ from .db import get_conn
 
 # Pre-seeded exercises; INSERT OR IGNORE in seed() keeps re-runs safe
 DEFAULTS = [
-    ("Skate",     "sport",      "min"),
-    ("Tennis",    "sport",      "min"),
-    ("Kettlebell","strength",   "kg"),
-    ("Monozigo",  "strength",   "kg"),
-    ("Dizigo",    "strength",   "kg"),
-    ("Box",       "combat",     "rounds"),
-    ("Sxoinaki",  "cardio",     "min"),
-    ("Push-ups",  "bodyweight", "reps"),
-    ("Kiliakous", "bodyweight", "reps"),
-    ("Pull-ups",  "bodyweight", "reps"),
-    ("Plank",     "core",       "sec"),
-    ("Gonato",    "rehab",      "sets"),
+    ("Skating",        "sport",      "min"),
+    ("Tennis",         "sport",      "min"),
+    ("Kettlebell",     "strength",   "kg"),
+    ("Horizontal Bar", "strength",   "kg"),
+    ("Parallel Bars",  "strength",   "kg"),
+    ("Boxing",         "combat",     "rounds"),
+    ("Jump Rope",      "cardio",     "min"),
+    ("Push-ups",       "bodyweight", "reps"),
+    ("Abs",            "bodyweight", "reps"),
+    ("Pull-ups",       "bodyweight", "reps"),
+    ("Plank",          "core",       "sec"),
+    ("Knee Rehab",     "rehab",      "sets"),
 ]
 
 # Order matters: shown as-is in the UI combo boxes

@@ -1,3 +1,4 @@
+# Workout templates: reusable exercise lists with target sets/reps/weight
 from .db import get_conn
 
 

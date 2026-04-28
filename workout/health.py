@@ -1,3 +1,4 @@
+# Daily health log: body weight, sleep, energy, pain notes
 from datetime import date, timedelta
 from .db import get_conn
 

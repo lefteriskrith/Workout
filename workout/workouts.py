@@ -1,3 +1,4 @@
+# Workout logging, set tracking, PR detection, and session queries
 from datetime import date as date_type
 from .db import get_conn
 

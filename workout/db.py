@@ -1,3 +1,4 @@
+# Database connection, schema creation, and migrations
 import sqlite3
 from pathlib import Path
 

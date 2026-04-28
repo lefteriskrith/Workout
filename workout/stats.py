@@ -1,3 +1,4 @@
+# Statistics: personal records, streak, activity frequency, weekly volume
 from datetime import date, timedelta
 from .db import get_conn
 

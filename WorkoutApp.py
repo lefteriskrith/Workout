@@ -1,3 +1,4 @@
+# GUI entry point — CustomTkinter desktop app with sidebar navigation
 import customtkinter as ctk
 from datetime import date, timedelta
 import sys

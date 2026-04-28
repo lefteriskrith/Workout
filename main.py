@@ -1,3 +1,4 @@
+# CLI entry point — terminal interface using Rich
 import sys
 from datetime import date, timedelta
 

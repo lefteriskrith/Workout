@@ -1,3 +1,4 @@
+# Exercise library: default activities, categories, units, CRUD
 from .db import get_conn
 
 # Pre-seeded exercises; INSERT OR IGNORE in seed() keeps re-runs safe

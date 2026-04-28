@@ -1,3 +1,4 @@
+# Weekly workout planner: set/get/copy plan entries per day
 from datetime import date, timedelta
 from .db import get_conn
 

@@ -5,6 +5,8 @@ from db import get_conn
 def log(*, on_date=None, weight_kg=None, sleep_h=None, energy=None,
         pain_notes=None, notes=None):
     log_date = on_date or date.today().isoformat()
+    # INSERT OR REPLACE: health_logs.date is PRIMARY KEY, so this is an upsert —
+    # logging twice on the same day overwrites instead of duplicating
     with get_conn() as conn:
         conn.execute(
             """INSERT OR REPLACE INTO health_logs

@@ -12,6 +12,8 @@ def get_prs():
 
 
 def streak():
+    # Walk dates newest→oldest; allow yesterday as the opening day so the
+    # streak doesn't reset just because the user hasn't trained yet today
     with get_conn() as conn:
         rows = conn.execute(
             "SELECT DISTINCT date FROM workout_logs ORDER BY date DESC"
@@ -30,6 +32,7 @@ def streak():
             count += 1
             expected = d - timedelta(days=1)
         elif count == 0 and d == today - timedelta(days=1):
+            # First date found is yesterday — start counting from there
             count += 1
             expected = d - timedelta(days=1)
         else:

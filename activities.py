@@ -1,5 +1,6 @@
 from db import get_conn
 
+# Pre-seeded exercises; INSERT OR IGNORE in seed() keeps re-runs safe
 DEFAULTS = [
     ("Skate",     "sport",      "min"),
     ("Tennis",    "sport",      "min"),
@@ -15,11 +16,13 @@ DEFAULTS = [
     ("Gonato",    "rehab",      "sets"),
 ]
 
+# Order matters: shown as-is in the UI combo boxes
 CATEGORIES = ["sport", "strength", "bodyweight", "cardio", "combat", "core", "rehab"]
 UNITS = ["reps", "min", "sec", "kg", "rounds", "sets"]
 
 
 def seed():
+    # OR IGNORE: calling this on every startup won't duplicate existing rows
     with get_conn() as conn:
         conn.executemany(
             "INSERT OR IGNORE INTO activities (name, category, unit) VALUES (?, ?, ?)",

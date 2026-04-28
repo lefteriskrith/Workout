@@ -39,6 +39,8 @@ def delete_entry(entry_id):
 
 
 def copy_plan(from_ws, to_ws):
+    # OR IGNORE respects the UNIQUE(week_start, day_index, activity_id) constraint —
+    # entries the user has already set for to_ws are not overwritten
     with get_conn() as conn:
         rows = conn.execute(
             "SELECT * FROM weekly_plans WHERE week_start = ?", (from_ws,)

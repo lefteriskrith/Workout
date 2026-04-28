@@ -21,6 +21,8 @@ def log_sets(activity_id, sets_data, notes=None, on_date=None):
     """Log individual sets. sets_data: list of dict(weight_kg, reps, rpe, duration_min)."""
     log_date = on_date or date_type.today().isoformat()
     all_prs = []
+    # seen de-duplicates PR strings: multiple sets at the same weight each
+    # trigger _update_pr, but we only want to report the first occurrence
     seen = set()
     with get_conn() as conn:
         for i, s in enumerate(sets_data, 1):
@@ -44,7 +46,9 @@ def log_sets(activity_id, sets_data, notes=None, on_date=None):
 # ─── PR detection ─────────────────────────────────────────────────────────────
 
 def _update_pr(conn, activity_id, sets, reps, weight_kg, duration_min, log_date):
+    # Called after every set; returns human-readable PR strings for the UI to display
     new_prs = []
+    # volume = sets × reps — crude proxy for total work done in a session
     volume = (sets or 1) * reps if reps else None
 
     existing = conn.execute(

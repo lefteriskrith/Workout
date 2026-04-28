@@ -2,13 +2,13 @@ import customtkinter as ctk
 from datetime import date, timedelta
 import sys
 
-import db
-import activities as act
-import workouts as wk
-import stats as st
-import planner as plan
-import health as hl
-import templates as tmpl
+import workout.db as db
+import workout.activities as act
+import workout.workouts as wk
+import workout.stats as st
+import workout.planner as plan
+import workout.health as hl
+import workout.templates as tmpl
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("dark-blue")
@@ -1037,7 +1037,7 @@ class ManagePage(ctk.CTkFrame):
                    rows, [36, 150, 120, 80]).pack(fill="both", expand=True)
 
     def _add_dlg(self):
-        from activities import CATEGORIES, UNITS
+        from workout.activities import CATEGORIES, UNITS
         dlg = ctk.CTkToplevel(self)
         dlg.title("Add Activity")
         dlg.geometry("360x260")

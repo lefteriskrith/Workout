@@ -1,5 +1,5 @@
 from datetime import date, timedelta
-from db import get_conn
+from .db import get_conn
 
 
 def log(*, on_date=None, weight_kg=None, sleep_h=None, energy=None,

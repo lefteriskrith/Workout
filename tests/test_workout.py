@@ -8,18 +8,18 @@ from pathlib import Path
 from datetime import date, timedelta
 
 # Redirect db to a temp file BEFORE importing any module that calls get_conn()
-import db
+import workout.db as db
 _tmp = tempfile.NamedTemporaryFile(suffix=".db", delete=False)
 _tmp.close()
 db.DB_PATH = Path(_tmp.name)
 db.init_db()
 
-import activities as act
-import workouts as wk
-import stats as st
-import health as hl
-import planner as plan
-import templates as tmpl
+import workout.activities as act
+import workout.workouts as wk
+import workout.stats as st
+import workout.health as hl
+import workout.planner as plan
+import workout.templates as tmpl
 
 
 def _add(name, category="strength", unit="kg"):

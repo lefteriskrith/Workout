@@ -1,4 +1,4 @@
-from db import get_conn
+from .db import get_conn
 
 
 def all_templates():

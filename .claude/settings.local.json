@@ -2,7 +2,15 @@
   "permissions": {
     "allow": [
       "Bash(pip install *)",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(gh repo *)",
+      "PowerShell(gh repo rename Workout --repo lefteriskrith/gym --yes)",
+      "Bash(python -m pytest tests.py -v)",
+      "Bash(python tests.py)",
+      "Bash(git mv *)",
+      "Bash(python -m pytest tests/ -v)"
     ],
     "additionalDirectories": [
       "d:\\downloads\\OneDrive\\Pictures\\python projects\\gym"

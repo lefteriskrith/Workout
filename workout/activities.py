@@ -1,4 +1,4 @@
-from db import get_conn
+from .db import get_conn
 
 # Pre-seeded exercises; INSERT OR IGNORE in seed() keeps re-runs safe
 DEFAULTS = [

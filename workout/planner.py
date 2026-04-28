@@ -1,5 +1,5 @@
 from datetime import date, timedelta
-from db import get_conn
+from .db import get_conn
 
 DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 

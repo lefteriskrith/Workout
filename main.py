@@ -7,12 +7,12 @@ from rich.panel import Panel
 from rich.prompt import Prompt
 from rich import box
 
-import db
-import activities as act
-import workouts as wk
-import stats as st
-import planner as plan
-import health as hl
+import workout.db as db
+import workout.activities as act
+import workout.workouts as wk
+import workout.stats as st
+import workout.planner as plan
+import workout.health as hl
 
 console = Console()
 

@@ -1,5 +1,5 @@
 from datetime import date as date_type
-from db import get_conn
+from .db import get_conn
 
 
 # ─── Core logging ─────────────────────────────────────────────────────────────

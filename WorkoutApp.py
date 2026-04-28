@@ -1080,7 +1080,7 @@ class ManagePage(ctk.CTkFrame):
 class App(ctk.CTk):
     def __init__(self):
         super().__init__()
-        self.title("Gym Tracker")
+        self.title("Workout")
         self.geometry("1080x720")
         self.minsize(900, 600)
         self._build()
@@ -1092,7 +1092,7 @@ class App(ctk.CTk):
         sb.pack(side="left", fill="y")
         sb.pack_propagate(False)
 
-        ctk.CTkLabel(sb, text="GYM\nTRACKER",
+        ctk.CTkLabel(sb, text="WORKOUT",
                      font=("Segoe UI", 17, "bold"),
                      text_color=ORANGE).pack(pady=(18, 4))
         ctk.CTkLabel(sb, text=date.today().strftime("%a %d %b"),

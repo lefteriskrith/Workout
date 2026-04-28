@@ -1,7 +1,7 @@
 import sqlite3
 from pathlib import Path
 
-DB_PATH = Path.home() / ".gym_tracker" / "gym.db"
+DB_PATH = Path.home() / ".workout_tracker" / "workout.db"
 
 
 def get_conn():
